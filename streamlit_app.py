@@ -20,20 +20,20 @@ alim_orani=st.number_input("Alım Oranı %",value=0.1)
 karAl_orani=st.number_input("Kar Alma Oranı %",value= 0.2)
 
 
-islem_Listesi=np.array([])
+islem_Listesi=np.array([])  # her bir eleman alınan hisse adetidir
 islem_Listesi_alim_fiyatlari=np.array([])
-alim=0
+al=0
 islem_Listesi_alim_fiyatlari=islem_Listesi*islem_Listesi_alim_fiyatlari
 
 for i in data["Close"]:
     if len(islem_Listesi)==0:
-        alim=round((alim_orani*cuzdanTL)/i)
-        islem_Listesi=np.append(islem_Listesi,alim)
+        al=round((alim_orani*cuzdanTL)/i)  # alınan hisse sayısı
+        islem_Listesi=np.append(islem_Listesi,al)
         islem_Listesi_alim_fiyatlari=np.append(islem_Listesi_alim_fiyatlari,i)
  
 
-st.write("İşlem Listesi:  ", islem_Listesi)
-st.write("İşlem alınan fiyatla:  ", islem_Listesi_alim_fiyatlari)
+st.write("İşlem Listesi (Her bir adet):  ", islem_Listesi)
+st.write("İşlem alınan fiyatları:  ", islem_Listesi_alim_fiyatlari)
     
 
 with st.echo(code_location='below'):
