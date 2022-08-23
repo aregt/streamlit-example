@@ -37,6 +37,6 @@ st.dataframe(islem_Listesi_alim_fiyatlari)
     
 
 with st.echo(code_location='below'):
-    st.dataframe(islem_Listesi)
-    st.dataframe(islem_Listesi_alim_fiyatlari)
+    #st.dataframe(islem_Listesi)
+    #st.dataframe(islem_Listesi_alim_fiyatlari)
     
