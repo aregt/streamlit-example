@@ -17,7 +17,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 
 
 with st.echo(code_location='below'):
-    cuzdanTL=st.slider("Cüzdan Bakiyesi",0,10000)
+    cuzdanTL=st.slider("Cüzdan Bakiyesi",0,10000,1000)
     alim_orani=st.number_input("Yeni Alım Oranı",0.01,1)
     karAl_orani=st.number_input("Kar alma Oranı",0.01,1)
     a=3
