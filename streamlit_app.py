@@ -13,8 +13,8 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 cuzdanTL=st.slider("Cüzdan Bakiyesi",0,10000,step=500)
-alim_orani=st.number_input("Alım Oranı",0,0.01)
-karAl_orani=st.number_input("Kar Alma Oranı",0,0.01)
+alim_orani=st.number_input("Alım Oranı")
+karAl_orani=st.number_input("Kar Alma Oranı")
 
 
 islem_Listesi=np.array([])
