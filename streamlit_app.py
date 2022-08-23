@@ -17,3 +17,9 @@ with st.echo(code_location='below'):
     cuzdanTL=10000
     alim_orani=0.1
     karAl_orani=0.15
+    
+    
+    islem_Listesi=np.array([])
+    islem_Listesi_alim_fiyatlari=np.array([])
+    alim=0
+    islem_Listesi_alim_fiyatlari=islem_Listesi*islem_Listesi_alim_fiyatlari
