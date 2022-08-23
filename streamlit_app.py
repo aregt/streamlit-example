@@ -32,8 +32,8 @@ for i in data["Close"]:
         islem_Listesi_alim_fiyatlari=np.append(islem_Listesi_alim_fiyatlari,i)
         islem_Listesi_alim_bakiyeleri=islem_Listesi*islem_Listesi_alim_fiyatlari
         cuzdan_Guncel_Bakiye=cuzdan_ilk_bakiye-(al*i)
-    elif :
-        pass
+    #elif :
+        
      
  
 
