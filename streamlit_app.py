@@ -20,4 +20,5 @@ with st.echo(code_location='below'):
     cuzdanTL=10000
     alim_orani=0.1
     karAl_orani=0.15
+    a=3
     
