@@ -27,6 +27,10 @@ for i in data["Close"]:
         alim=round((alim_orani*cuzdanTL)/i)
         islem_Listesi=np.append(islem_Listesi,alim)
         islem_Listesi_alim_fiyatlari=np.append(islem_Listesi_alim_fiyatlari,i)
+ 
+
+st.dataframe(islem_Listesi)
+st.dataframe(islem_Listesi_alim_fiyatlari)
     
 
 with st.echo(code_location='below'):
