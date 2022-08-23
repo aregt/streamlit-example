@@ -23,13 +23,14 @@ karAl_orani=st.number_input("Kar Alma Oranı %",value= 0.2)
 islem_Listesi=np.array([])  # her bir eleman alınan hisse adetidir
 islem_Listesi_alim_fiyatlari=np.array([])
 al=0
-islem_Listesi_alim_bakiyeleri=islem_Listesi*islem_Listesi_alim_fiyatlari
+
 
 for i in data["Close"]:
     if len(islem_Listesi)==0:
         al=round((alim_orani*cuzdanTL)/i)  # alınan hisse sayısı
         islem_Listesi=np.append(islem_Listesi,al)
         islem_Listesi_alim_fiyatlari=np.append(islem_Listesi_alim_fiyatlari,i)
+        islem_Listesi_alim_bakiyeleri=islem_Listesi*islem_Listesi_alim_fiyatlari
  
 
 st.write("İşlem Listesi (Her bir adet):  ", islem_Listesi)
