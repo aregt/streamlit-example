@@ -15,12 +15,12 @@ link="https://www.kaggle.com/datasets/rpaguirre/tesla-stock-price?select=Tesla.c
 data=pd.read_csv("link")
 # Welcome to Streamlit!
 
-Edit `/streamlit_app.py` to customize this apsp to your heart's desire :heart:
+#Edit `/streamlit_app.py` to customize this apsp to your heart's desire :heart:
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+#If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
+#forums](https://discuss.streamlit.io).
 
-In the meantime, below is an example of what you can do with just a few lines of code:
+#In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
 
