@@ -10,8 +10,9 @@ import datetime as dt
 
 #import yfinance as yf
 #data = yf.download('MSFT', start = '2012-01-01', end='2017-01-01')
-"""
-data=pd.read_csv("https://www.kaggle.com/datasets/rpaguirre/tesla-stock-price?select=Tesla.csv+-+Tesla.csv.csv")
+link="https://www.kaggle.com/datasets/rpaguirre/tesla-stock-price?select=Tesla.csv+-+Tesla.csv.csv"
+
+data=pd.read_csv("link")
 # Welcome to Streamlit!
 
 Edit `/streamlit_app.py` to customize this apsp to your heart's desire :heart:
