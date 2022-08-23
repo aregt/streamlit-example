@@ -4,6 +4,11 @@ import math
 import pandas as pd
 import streamlit as st
 
+import datetime as dt
+
+"""Data İmport"""
+import yfinance as yf
+data = yf.download('MSFT', start = '2012-01-01', end='2017-01-01')
 """
 # Welcome to Streamlit!
 
