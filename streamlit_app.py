@@ -23,7 +23,7 @@ karAl_orani=st.number_input("Kar Alma Oranı %",value= 0.2)
 islem_Listesi=np.array([])  # her bir eleman alınan hisse adetidir
 islem_Listesi_alim_fiyatlari=np.array([])
 al=0
-islem_Listesi_alim_fiyatlari=islem_Listesi*islem_Listesi_alim_fiyatlari
+islem_Listesi_alim_bakiyeleri=islem_Listesi*islem_Listesi_alim_fiyatlari
 
 for i in data["Close"]:
     if len(islem_Listesi)==0:
@@ -34,6 +34,7 @@ for i in data["Close"]:
 
 st.write("İşlem Listesi (Her bir adet):  ", islem_Listesi)
 st.write("İşlem alınan fiyatları:  ", islem_Listesi_alim_fiyatlari)
+st.write("Her bir işlem için ödenen para:  ", islem_Listesi_alim_bakiyeleri)
     
 
 with st.echo(code_location='below'):
