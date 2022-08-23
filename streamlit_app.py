@@ -13,7 +13,7 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
-link="https://www.kaggle.com/datasets/rpaguirre/tesla-stock-price?select=Tesla.csv+-+Tesla.csv.csv"
+link="https://github.com/aregt/streamlit-example/blob/master/Tesla.csv%20-%20Tesla.csv.csv"
 data=pd.read_csv(link)
 
 cuzdanTL=st.slider("Cüzdan Bakiyesi",0,10000,step=500)
