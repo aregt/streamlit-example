@@ -13,8 +13,8 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 cuzdanTL=st.slider("Cüzdan Bakiyesi",0,10000,step=500)
-alim_orani=st.number_input("Alım Oranı")
-karAl_orani=st.number_input("Kar Alma Oranı")
+alim_orani=st.number_input("Alım Oranı %")
+karAl_orani=st.number_input("Kar Alma Oranı %")
 
 
 islem_Listesi=np.array([])
@@ -30,5 +30,6 @@ for i in data["Close"]:
     
 
 with st.echo(code_location='below'):
-    a=3
+    st.dataframe(islem_Listesi)
+    st.dataframe(islem_Listesi_alim_fiyatlari)
     
