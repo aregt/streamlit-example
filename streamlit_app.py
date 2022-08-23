@@ -32,8 +32,8 @@ for i in data["Close"]:
         islem_Listesi_alim_fiyatlari=np.append(islem_Listesi_alim_fiyatlari,i)
  
 
-st.write("İşlem Listesi:  " islem_Listesi)
-st.write("İşlem alınan fiyatla:  " islem_Listesi_alim_fiyatlari)
+st.write("İşlem Listesi:  ", islem_Listesi)
+st.write("İşlem alınan fiyatla:  ", islem_Listesi_alim_fiyatlari)
     
 
 with st.echo(code_location='below'):
