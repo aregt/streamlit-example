@@ -31,6 +31,9 @@ for i in data["Close"]:
         islem_Listesi=np.append(islem_Listesi,al)
         islem_Listesi_alim_fiyatlari=np.append(islem_Listesi_alim_fiyatlari,i)
         islem_Listesi_alim_bakiyeleri=islem_Listesi*islem_Listesi_alim_fiyatlari
+        cuzdanTL=cuzdanTL-(al*i)
+    elif 
+     
  
 
 st.write("İşlem Listesi (Her bir adet):  ", islem_Listesi)
