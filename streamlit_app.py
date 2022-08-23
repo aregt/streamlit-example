@@ -13,8 +13,8 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 cuzdanTL=st.slider("Cüzdan Bakiyesi",0,10000,step=500)
-alim_orani=0.1
-karAl_orani=0.15
+alim_orani=st.number_input("Alım Oranı",0,0.01)
+karAl_orani=st.number_input("Kar Alma Oranı",0,0.01)
 
 
 islem_Listesi=np.array([])
@@ -27,7 +27,7 @@ for i in data["Close"]:
         alim=round((alim_orani*cuzdanTL)/i)
         islem_Listesi=np.append(islem_Listesi,alim)
         islem_Listesi_alim_fiyatlari=np.append(islem_Listesi_alim_fiyatlari,i)
-    print(i)
+    
 
 with st.echo(code_location='below'):
     a=3
