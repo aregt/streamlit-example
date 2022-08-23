@@ -15,7 +15,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 
 data=pd.read_csv('Tesla.csv - Tesla.csv.csv')
 
-cuzdanTL=st.slider("Cüzdan Bakiyesi",0,10000,step=500)
+cuzdan_ilk_bakiye=st.slider("Cüzdan Bakiyesi",0,10000,step=500)
 alim_orani=st.number_input("Alım Oranı % (cüzdan bakiyesinin % kaçıyla alım yapsın)",value=0.1)
 karAl_orani=st.number_input("Kar Alma Oranı %",value= 0.2)
 
@@ -27,19 +27,19 @@ al=0
 
 for i in data["Close"]:
     if len(islem_Listesi)==0:
-        al=round((alim_orani*cuzdanTL)/i)  # alınan hisse sayısı
+        al=round((alim_orani*cuzdan_ilk_bakiye)/i)  # alınan hisse sayısı
         islem_Listesi=np.append(islem_Listesi,al)
         islem_Listesi_alim_fiyatlari=np.append(islem_Listesi_alim_fiyatlari,i)
         islem_Listesi_alim_bakiyeleri=islem_Listesi*islem_Listesi_alim_fiyatlari
-        cuzdanTL=cuzdanTL-(al*i)
-    #elif 
+        cuzdan_Guncel_Bakiye=cuzdan_ilk_bakiye-(al*i)
+    elif 
      
  
 
 st.write("İşlem Listesi (Her bir adet):  ", islem_Listesi)
 st.write("İşlem alınan fiyatları:  ", islem_Listesi_alim_fiyatlari)
 st.write("Her bir işlem için ödenen para:  ", islem_Listesi_alim_bakiyeleri)
-st.write("Cüzdanda Kalan Para:\n  ", cuzdanTL)
+st.write("Cüzdanda Kalan Para:\n  ", cuzdan_Guncel_Bakiye)
     
 
 with st.echo(code_location='below'):
