@@ -15,7 +15,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 
 data=pd.read_csv('Tesla.csv - Tesla.csv.csv')
 
-cuzdan_ilk_bakiye=st.slider("Cüzdan Bakiyesi",0,10000,step=500)
+cuzdan_ilk_bakiye=st.slider("Başlangıçtaki cüzdan bakiyesi",0,10000,step=500)
 alim_orani=st.number_input("Alım Oranı % (cüzdan bakiyesinin % kaçıyla alım yapsın)",value=0.1)
 karAl_orani=st.number_input("Kar Alma Oranı %",value= 0.2)
 
@@ -32,7 +32,13 @@ for i in data["Close"]:
         islem_Listesi_alim_fiyatlari=np.append(islem_Listesi_alim_fiyatlari,i)
         islem_Listesi_alim_bakiyeleri=islem_Listesi*islem_Listesi_alim_fiyatlari
         cuzdan_Guncel_Bakiye=cuzdan_ilk_bakiye-(al*i)
-    #elif :
+    elif cuzdan_Guncel_Bakiye >500:
+        al=round((alim_orani*cuzdan_Guncel_Bakiye)/i)  # alınan hisse sayısı
+        islem_Listesi=np.append(islem_Listesi,al)
+        islem_Listesi_alim_fiyatlari=np.append(islem_Listesi_alim_fiyatlari,i)
+        islem_Listesi_alim_bakiyeleri=islem_Listesi*islem_Listesi_alim_fiyatlari
+        cuzdan_Guncel_Bakiye=cuzdan_Guncel_Bakiye-(al*i)
+        
         
      
  
