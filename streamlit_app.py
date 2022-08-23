@@ -23,4 +23,5 @@ alim=0
 islem_Listesi_alim_fiyatlari=islem_Listesi*islem_Listesi_alim_fiyatlari
 
 with st.echo(code_location='below'):
+    a=3
     
