@@ -39,7 +39,7 @@ for i in data["Close"]:
 st.write("İşlem Listesi (Her bir adet):  ", islem_Listesi)
 st.write("İşlem alınan fiyatları:  ", islem_Listesi_alim_fiyatlari)
 st.write("Her bir işlem için ödenen para:  ", islem_Listesi_alim_bakiyeleri)
-st.write("Cüzdanda Kalan Para:  ", cuzdanTL)
+st.write("Cüzdanda Kalan Para:\n  ", cuzdanTL)
     
 
 with st.echo(code_location='below'):
