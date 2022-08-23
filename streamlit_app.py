@@ -15,7 +15,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 
 data=pd.read_csv('Tesla.csv - Tesla.csv.csv')
 
-cuzdan_ilk_bakiye=st.slider("Başlangıçtaki cüzdan bakiyesi",0,10000,step=500)
+cuzdan_ilk_bakiye=st.slider("Başlangıçtaki cüzdan bakiyesi",0,10000,step=500,value=10000)
 alim_orani=st.number_input("Alım Oranı % (cüzdan bakiyesinin % kaçıyla alım yapsın)",value=0.1)
 karAl_orani=st.number_input("Kar Alma Oranı %",value= 0.2)
 
