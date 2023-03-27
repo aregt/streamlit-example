@@ -4,6 +4,7 @@ import math
 import pandas as pd
 import streamlit as st
 import numpy as np
+import plotly.graph_objs as go
 
 """
 # Welcome to Streamlit!
@@ -13,43 +14,41 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
-data=pd.read_csv('Tesla.csv - Tesla.csv.csv')
-
-cuzdan_ilk_bakiye=st.slider("Başlangıçtaki cüzdan bakiyesi",0,10000,step=500,value=10000)
-alim_orani=st.number_input("Alım Oranı % (cüzdan bakiyesinin % kaçıyla alım yapsın)",value=0.1)
-karAl_orani=st.number_input("Kar Alma Oranı %",value= 0.2)
+# data=pd.read_csv('Tesla.csv - Tesla.csv.csv')
 
 
-islem_Listesi=np.array([])  # her bir eleman alınan hisse adetidir
-islem_Listesi_alim_fiyatlari=np.array([])
-al=0
-
-
-for i in data["Close"]:
-    if len(islem_Listesi)==0:
-        al=round((alim_orani*cuzdan_ilk_bakiye)/i)  # alınan hisse sayısı
-        islem_Listesi=np.append(islem_Listesi,al)
-        islem_Listesi_alim_fiyatlari=np.append(islem_Listesi_alim_fiyatlari,i)
-        islem_Listesi_alim_bakiyeleri=islem_Listesi*islem_Listesi_alim_fiyatlari
-        cuzdan_Guncel_Bakiye=cuzdan_ilk_bakiye-(al*i)
-    elif cuzdan_Guncel_Bakiye >500:
-        al=round((alim_orani*cuzdan_Guncel_Bakiye)/i)  # alınan hisse sayısı
-        islem_Listesi=np.append(islem_Listesi,al)
-        islem_Listesi_alim_fiyatlari=np.append(islem_Listesi_alim_fiyatlari,i)
-        islem_Listesi_alim_bakiyeleri=islem_Listesi*islem_Listesi_alim_fiyatlari
-        cuzdan_Guncel_Bakiye=cuzdan_Guncel_Bakiye-(al*i)
-        
-        
-     
- 
-
-st.write("İşlem Listesi (Her bir adet):  ", islem_Listesi)
-st.write("İşlem alınan fiyatları:  ", islem_Listesi_alim_fiyatlari)
-st.write("Her bir işlem için ödenen para:  ", islem_Listesi_alim_bakiyeleri)
-st.write("Cüzdanda Kalan Para:\n  ", cuzdan_Guncel_Bakiye)
-    
-
-with st.echo(code_location='below'):
-    a=3
     
     
+
+
+
+# Data.csv dosyasını okuyoruz
+df = pd.read_csv("Tesla.csv")
+
+# Mum grafik oluşturuyoruz
+fig = go.Figure(data=[go.Candlestick(x=df['Date'],
+                open=df['Open'],
+                high=df['High'],
+                low=df['Low'],
+                close=df['Close'])])
+
+# Zoom yapabilmek için layout ayarlarını yapıyoruz
+fig.update_layout(
+    xaxis_rangeslider_visible=True,
+    xaxis_title="Tarih",
+    yaxis_title="Fiyat"
+)
+
+# Mum grafik arayüzünü gösteriyoruz
+st.plotly_chart(fig)
+
+# Close ve State kolonlarını seçiyoruz
+df = df[["Close", "State"]]
+
+# State kolonuna el ile veri girişi yapabilirsiniz
+
+# Yeni bir sütun ekliyoruz ve bu sütunda her bir kapanış değerinin yüzde değişimini hesaplıyoruz
+df["Close % Change"] = df["Close"].pct_change()
+
+# Tablo arayüzünü gösteriyoruz
+st.write(df)
