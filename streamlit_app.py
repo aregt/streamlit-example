@@ -27,3 +27,4 @@ new_df['State'] = ''
 # Interaktif tabloyu sayfaya ekle
 #st.table(new_df)
 st.experimental_data_editor(new_df)
+
