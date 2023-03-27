@@ -4,27 +4,27 @@
 
 
     
-    
-import streamlit as st
-import pandas as pd
 
+import plotly.graph_objs as go
+import pandas as pd
+import streamlit as st
 
 # Veri dosyasını oku
 df = pd.read_csv('Tesla.csv - Tesla.csv.csv')
 
-# Create figure
-fig = go.Figure(data=[go.Candlestick(x=df['Date'],
+# Mum grafiği oluştur
+fig = go.Figure(data=[go.Candlestick(x=df['Tarih'],
                 open=df['Open'],
                 high=df['High'],
                 low=df['Low'],
                 close=df['Close'])])
 
-# Set layout
-fig.update_layout(title='Tesla Stock Price',
-                   yaxis_title='Price (USD)',
+# Düzenleme yap
+fig.update_layout(title='Tesla Hisse Senedi Fiyatları',
+                   yaxis_title='Fiyat (USD)',
                    xaxis_rangeslider_visible=True)
 
-# Plot figure
+# Grafiği göster
 st.plotly_chart(fig)
 
 
