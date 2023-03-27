@@ -13,7 +13,7 @@ import streamlit as st
 df = pd.read_csv('Tesla.csv - Tesla.csv.csv')
 
 # Mum grafiği oluştur
-fig = go.Figure(data=[go.Candlestick(x=df['Tarih'],
+fig = go.Figure(data=[go.Candlestick(x=df['Date'],
                 open=df['Open'],
                 high=df['High'],
                 low=df['Low'],
