@@ -7,7 +7,7 @@
     
 import streamlit as st
 import pandas as pd
-#import plotly.express as px
+
 
 # Veri dosyasını oku
 df = pd.read_csv('Tesla.csv - Tesla.csv.csv')
