@@ -10,7 +10,7 @@ import pandas as pd
 #import plotly.express as px
 
 # Veri dosyasını oku
-df = pd.read_csv('Tesla.csv')
+df = pd.read_csv('Tesla.csv - Tesla.csv.csv')
 
 # Mum grafiğini oluştur
 #fig = px.candlestick(df, x='Date', open='Open', high='High', low='Low', close='Close')
