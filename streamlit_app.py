@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import plotly.graph_objs as go
-pip install plotly
+
 
 # data=pd.read_csv('Tesla.csv - Tesla.csv.csv')
 
