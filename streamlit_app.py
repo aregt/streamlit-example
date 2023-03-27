@@ -1,10 +1,3 @@
-from collections import namedtuple
-import altair as alt
-import math
-import pandas as pd
-import streamlit as st
-import numpy as np
-import plotly.graph_objs as go
 
 
 # data=pd.read_csv('Tesla.csv - Tesla.csv.csv')
